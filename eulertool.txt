@@ -1,0 +1,11 @@
+@ECHO OFF
+echo "time, delta time (ms), euler:hmd controller 0, controller 1">>data.txt
+echo %time%>>data.txt
+SET /A deltat = 0.2
+SET /A t = 0
+:LOOPSTART
+echo %t% >> data.txt
+adb shell dumpsys tracking | C:\Windows\System32\findstr.exe /r /c:"Rotation Euler Angles" >> data.txt
+SET /A t = %t% + 200
+timeout %deltat%
+GOTO LOOPSTART
