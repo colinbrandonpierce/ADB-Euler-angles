@@ -1,2 +1,2 @@
 # ADB-Euler-angles
-Simple windows script to dump device Euler angles through ADB
+Simple batch script to dump Android device Euler angles through ADB
